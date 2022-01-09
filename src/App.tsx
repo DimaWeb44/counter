@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import Scoreboard from "./components/scoreboard/Scoreboard";
+import ButtonInc from "./components/buttons/inc/inc";
+import ButtonReset from "./components/buttons/reset/reset";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    let [counter, setCounter] = useState(0)
+    const inCounter = () => {
+        setCounter(counter + 1)
+    }
+
+    const resetCounter = () => {
+        setCounter(0)
+    }
+
+    return (
+        <div className="App">
+            <div>
+                <Scoreboard counter={counter}/>
+                <div className='buttons'>
+                    <ButtonInc inCounter={inCounter} counter={counter}/>
+                    <ButtonReset resetCounter={resetCounter} counter={counter}/>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default App;
