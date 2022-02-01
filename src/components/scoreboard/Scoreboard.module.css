@@ -1,7 +1,24 @@
 .scoreboard {
-  background-color: darkcyan;
+    padding: 2px;
 }
-.active{
-  color: brown;
+
+.scoreboard_set {
+    margin-top: 27px;
+}
+
+.input {
+    width: 50px;
+    margin: 5px;
+
+}
+
+.active {
+    color: brown;
+}
+
+.error {
+    width: 50px;
+    margin: 5px;
+    background-color: brown;
 }
 
