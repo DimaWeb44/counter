@@ -2,7 +2,7 @@ import React from 'react';
 import s from './button.module.css'
 
 type ButtonPropsType = {
-    counter?: number
+    value?: number
     onClick: () => void
     valueButton: string
     maxValue: number
@@ -13,10 +13,10 @@ function Button(props: ButtonPropsType) {
     return (
         <div>
             <button
-                disabled={props.counter === props.maxValue
-                || props.maxValue  === props.startValue
+                disabled={props.value === props.maxValue
+                || props.maxValue === props.startValue
                 || props.maxValue < props.startValue
-                ||  props.maxValue <= 0
+                || props.maxValue <= 0
                 || props.startValue < 0}
                 onClick={props.onClick}
                 className={s.button}>

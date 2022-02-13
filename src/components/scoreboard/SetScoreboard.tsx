@@ -5,17 +5,17 @@ import s from './Scoreboard.module.css'
 type ScoreboardSetPropsType = {
     maxValue: number
     startValue: number
-    setStartValue: (value: number) => void
-    setMaxValue: (value: number) => void
+    onChangeStartValue: (value: number) => void
+    onChangeMaxValue: (value: number) => void
 
 }
 
 const SetScoreboard = (props: ScoreboardSetPropsType) => {
     const onChangeMaxValue = (e: ChangeEvent<HTMLInputElement>) => {
-        props.setMaxValue(+e.currentTarget.value)
+        props.onChangeMaxValue(+e.currentTarget.value)
     }
     const onChangeStartValue = (e: ChangeEvent<HTMLInputElement>) => {
-        props.setStartValue(+e.currentTarget.value)
+        props.onChangeStartValue(+e.currentTarget.value)
     }
     return <div className={s.scoreboard_set}>
         <div>max value:
