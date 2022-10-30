@@ -16,8 +16,8 @@ export const loadState = () => {
 export const saveState = (state: AppStateType) => {
     try {
         const serializedState = JSON.stringify(state);
-        if (+state.counter.maxValue && +state.counter.startValue >= 0 &&
-            +state.counter.maxValue > +state.counter.startValue) {
+        if (state.counter.maxValue && state.counter.startValue >= 0 &&
+            state.counter.maxValue > state.counter.startValue) {
             localStorage.setItem('state', serializedState);
         }
     } catch {
